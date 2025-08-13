@@ -137,24 +137,24 @@ const Induction = () => {
       </section>
 
       {/* Induction Form */}
-      <section className="bg-gray-900 py-8">
+      <section className="bg-white py-8">
         <div className="container-max px-4 sm:px-6 lg:px-8 py-8">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-8">
-              <h2 className="text-3xl font-bold text-yellow-400 mb-4">Application Form</h2>
-              <p className="text-xl text-white">
+              <h2 className="text-3xl font-bold text-gray-800 mb-4">Application Form</h2>
+              <p className="text-xl text-gray-700">
                 Fill out this form to apply for deputy manager position at TaskForce
               </p>
             </div>
             
             <form onSubmit={handleSubmit} className="space-y-8">
               {/* Basic Information */}
-              <div className="bg-gray-800 p-6 rounded-lg">
-                <h3 className="text-xl font-semibold text-yellow-400 mb-6">Basic Information</h3>
+              <div className="bg-white p-6 rounded-lg border border-gray-200 shadow-sm">
+                <h3 className="text-xl font-semibold text-gray-800 mb-6">Basic Information</h3>
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-yellow-400 mb-2">
+                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
                       Full Name *
                     </label>
                     <input
@@ -164,13 +164,13 @@ const Induction = () => {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-400 focus:border-transparent text-gray-900 bg-white text-black"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-400 focus:border-transparent text-gray-900 bg-white"
                       placeholder="Enter your full name"
                     />
                   </div>
                   
                   <div>
-                    <label htmlFor="phone" className="block text-sm font-medium text-yellow-400 mb-2">
+                    <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
                       Phone Number *
                     </label>
                     <input
@@ -188,7 +188,7 @@ const Induction = () => {
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
                   <div>
-                    <label htmlFor="rollNo" className="block text-sm font-medium text-yellow-400 mb-2">
+                    <label htmlFor="rollNo" className="block text-sm font-medium text-gray-700 mb-2">
                       Roll Number *
                     </label>
                     <input
@@ -204,7 +204,7 @@ const Induction = () => {
                   </div>
                   
                   <div>
-                    <label htmlFor="department" className="block text-sm font-medium text-yellow-400 mb-2">
+                    <label htmlFor="department" className="block text-sm font-medium text-gray-700 mb-2">
                       Department *
                     </label>
                     <select
@@ -225,14 +225,14 @@ const Induction = () => {
               </div>
 
               {/* Preference */}
-              <div className="bg-gray-800 p-6 rounded-lg mt-8">
-                <h3 className="text-xl font-semibold text-yellow-400 mb-6">Team Preference</h3>
+              <div className="bg-white p-6 rounded-lg mt-8 border border-gray-200 shadow-sm">
+                <h3 className="text-xl font-semibold text-gray-800 mb-6">Team Preference</h3>
                 
                 <div>
-                  <label className="block text-sm font-medium text-yellow-400 mb-2">
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
                     Select Your Top 3 Preferences *
                   </label>
-                  <p className="text-sm text-yellow-400 mb-4">
+                  <p className="text-sm text-gray-600 mb-4">
                     Click on the teams to select your preferences in order. You can select up to 3 teams.
                   </p>
                   
@@ -248,14 +248,14 @@ const Induction = () => {
                           onClick={() => handlePreferenceSelect(team)}
                           className={`p-4 rounded-lg border-2 text-left transition-all duration-200 ${
                             isSelected
-                              ? 'border-yellow-400 bg-yellow-50 text-yellow-800'
-                              : 'border-gray-300 bg-white text-gray-700 hover:border-yellow-300 hover:bg-yellow-50'
+                              ? 'border-yellow-500 bg-white text-gray-900'
+                              : 'border-gray-300 bg-white text-gray-900 hover:border-yellow-300'
                           }`}
                         >
                           <div className="flex items-center justify-between">
-                            <span className="font-medium text-yellow-400">{team}</span>
+                            <span className="font-medium">{team}</span>
                             {isSelected && (
-                              <span className="bg-yellow-400 text-black text-xs font-bold px-2 py-1 rounded-full">
+                              <span className="bg-yellow-500 text-white text-xs font-bold px-2 py-1 rounded-full">
                                 {preferenceNumber}
                               </span>
                             )}
@@ -264,33 +264,21 @@ const Induction = () => {
                       )
                     })}
                   </div>
-                  
-                  {formData.preferences.length > 0 && (
-                    <div className="bg-white p-3 rounded-lg border">
-                      <p className="text-sm font-medium text-yellow-400 mb-2">Your Preferences:</p>
-                      <div className="space-y-1">
-                        {formData.preferences.map((team, index) => (
-                          <div key={index} className="text-sm text-yellow-400">
-                            {index + 1}. {team}
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-                  
-                  {formData.preferences.length === 0 && (
-                    <p className="text-sm text-red-600">Please select at least one preference.</p>
-                  )}
+
                 </div>
+                
+                {submitStatus === 'error' && formData.preferences.length === 0 && (
+                  <p className="mt-2 text-sm text-red-600">Please select at least one team preference</p>
+                )}
               </div>
 
               {/* Application Questions */}
-              <div className="bg-gray-800 p-6 rounded-lg mt-8">
-                <h3 className="text-xl font-semibold text-yellow-400 mb-6">Application Questions</h3>
+              <div className="bg-white p-6 rounded-lg mt-8 border border-gray-200 shadow-sm">
+                <h3 className="text-xl font-semibold text-gray-800 mb-6">Application Questions</h3>
                 
                 <div className="space-y-6">
                   <div>
-                    <label htmlFor="studentLifeEasier" className="block text-sm font-medium text-black mb-2">
+                    <label htmlFor="studentLifeEasier" className="block text-sm font-medium text-gray-700 mb-2">
                       In one line, what does "making student life easier" mean to you? *
                     </label>
                     <input
@@ -306,7 +294,7 @@ const Induction = () => {
                   </div>
                   
                   <div>
-                    <label htmlFor="leadershipExperience" className="block text-sm font-medium text-black mb-2">
+                    <label htmlFor="leadershipExperience" className="block text-sm font-medium text-gray-700 mb-2">
                       Describe a time when you led a team under pressure. What was your approach? *
                     </label>
                     <textarea
@@ -322,7 +310,7 @@ const Induction = () => {
                   </div>
                   
                   <div>
-                    <label htmlFor="eventSuggestion" className="block text-sm font-medium text-black mb-2">
+                    <label htmlFor="eventSuggestion" className="block text-sm font-medium text-gray-700 mb-2">
                       Suggest one event that you think TaskForce should organise this semester. *
                     </label>
                     <textarea
@@ -338,7 +326,7 @@ const Induction = () => {
                   </div>
                   
                   <div>
-                    <label htmlFor="taskforceMeaning" className="block text-sm font-medium text-black mb-2">
+                    <label htmlFor="taskforceMeaning" className="block text-sm font-medium text-gray-700 mb-2">
                       What does TaskForce in this college mean to you? *
                     </label>
                     <textarea
@@ -368,32 +356,32 @@ const Induction = () => {
               
               {/* Status Messages */}
               {submitStatus === 'success' && (
-                <div className="mt-6 p-6 bg-gradient-to-r from-green-50 to-emerald-50 border-l-4 border-green-400 rounded-lg shadow-lg">
+                <div className="mt-6 p-6 bg-white border-l-4 border-green-500 rounded-lg shadow-lg">
                   <div className="flex items-center">
                     <div className="flex-shrink-0">
-                      <svg className="w-8 h-8 text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <svg className="w-8 h-8 text-green-500" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                       </svg>
                     </div>
                     <div className="ml-4">
-                      <h3 className="text-lg font-semibold text-green-800">Application Submitted Successfully!</h3>
-                      <p className="text-green-700 mt-1">Thank you for your application! We will review your submission and get back to you soon.</p>
+                      <h3 className="text-lg font-semibold text-gray-900">Application Submitted Successfully!</h3>
+                      <p className="text-gray-700 mt-1">Thank you for your application! We will review your submission and get back to you soon.</p>
                     </div>
                   </div>
                 </div>
               )}
               
               {submitStatus === 'error' && (
-                <div className="mt-6 p-6 bg-gradient-to-r from-red-50 to-rose-50 border-l-4 border-red-400 rounded-lg shadow-lg">
+                <div className="mt-6 p-6 bg-white border-l-4 border-red-500 rounded-lg shadow-lg">
                   <div className="flex items-center">
                     <div className="flex-shrink-0">
-                      <svg className="w-8 h-8 text-red-400" fill="currentColor" viewBox="0 0 20 20">
+                      <svg className="w-8 h-8 text-red-500" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
                       </svg>
                     </div>
                     <div className="ml-4">
-                      <h3 className="text-lg font-semibold text-red-800">Submission Failed</h3>
-                      <p className="text-red-700 mt-1">{formData.preferences.length === 0 ? 'Please select at least one team preference before submitting.' : 'Something went wrong. Please try again later.'}</p>
+                      <h3 className="text-lg font-semibold text-gray-900">Submission Failed</h3>
+                      <p className="text-gray-700 mt-1">{formData.preferences.length === 0 ? 'Please select at least one team preference before submitting.' : 'Something went wrong. Please try again later.'}</p>
                     </div>
                   </div>
                 </div>

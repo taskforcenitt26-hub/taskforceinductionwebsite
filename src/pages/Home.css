@@ -10,7 +10,21 @@
 
 /* Event title styles */
 .event-title {
-  color: #f59e0b !important; /* Same vibrant yellow */
+  color: #1f2937 !important; /* Dark gray for better contrast */
+}
+
+/* Update text colors for better visibility */
+.bg-gray-50,
+.bg-gray-100 {
+  color: #1f2937 !important; /* Dark gray text on light backgrounds */
+}
+
+/* Ensure text in event cards is visible */
+.bg-gray-50 p,
+.bg-gray-100 p,
+.bg-gray-50 .text-gray-600,
+.bg-gray-100 .text-gray-600 {
+  color: #1f2937 !important;
 }
 
 /* For medium screens and up */

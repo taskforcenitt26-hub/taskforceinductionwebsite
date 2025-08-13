@@ -110,25 +110,25 @@ const Home = () => {
           <div className="relative md:hidden">
             {/* Event card */}
             {upcomingEvents.length > 0 && (
-              <div className="bg-gray-50 p-6 rounded-lg hover:shadow-md transition-shadow duration-200">
+              <div className="bg-gray-50 p-6 rounded-lg hover:shadow-md transition-shadow duration-200 text-gray-800">
                 <div className="text-yellow-600 font-semibold mb-2">
                   {upcomingEvents[currentUpdateIndex].date}
                 </div>
-                <h3 className="event-title text-xl font-semibold mb-3">
+                <h3 className="event-title text-xl font-semibold mb-3 text-gray-900">
                   {upcomingEvents[currentUpdateIndex].title}
                 </h3>
-                <p className="text-gray-600 mb-4">
+                <p className="text-gray-700 mb-4">
                   {upcomingEvents[currentUpdateIndex].description}
                 </p>
-                <div className="text-sm text-gray-500 mb-3">
+                <div className="text-sm text-gray-600">
                   <div className="flex items-center">
-                    <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <svg className="w-4 h-4 mr-2 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                     {upcomingEvents[currentUpdateIndex].time}
                   </div>
                   <div className="flex items-center mt-1">
-                    <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <svg className="w-4 h-4 mr-2 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                     </svg>
@@ -161,23 +161,23 @@ const Home = () => {
           {/* Desktop grid */}
           <div className="hidden md:grid grid-cols-3 gap-8">
             {upcomingEvents.map((event) => (
-              <div key={event.id} className="bg-gray-50 p-6 rounded-lg hover:shadow-md transition-shadow duration-200">
+              <div key={event.id} className="bg-gray-50 p-6 rounded-lg hover:shadow-md transition-shadow duration-200 text-gray-800">
                 <div className="text-yellow-600 font-semibold mb-2">{event.date}</div>
-                <h3 className="event-title text-xl font-semibold mb-3">
+                <h3 className="event-title text-xl font-semibold mb-3 text-gray-900">
                   {event.title}
                 </h3>
-                <p className="text-gray-600 mb-4">
+                <p className="text-gray-700 mb-4">
                   {event.description}
                 </p>
-                <div className="text-sm text-gray-500 mb-3">
+                <div className="text-sm text-gray-600">
                   <div className="flex items-center">
-                    <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <svg className="w-4 h-4 mr-2 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                     {event.time}
                   </div>
                   <div className="flex items-center mt-1">
-                    <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <svg className="w-4 h-4 mr-2 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                     </svg>
