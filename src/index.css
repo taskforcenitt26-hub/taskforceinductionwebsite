@@ -1,0 +1,65 @@
+@import './theme-overrides.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --dark-bg: #0a0f1d; /* Darker base color */
+  --content-bg: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); /* Subtle gradient */
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-[#1f2029];
+    color: #ffffff; /* White text by default */
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  
+  /* Set text colors for all elements */
+  h1, h2, h3, h4, h5, h6 {
+    color: #fbbf24 !important; /* Yellow for headings */
+  }
+  
+  /* Force white text for all body text */
+  body, p, span, div, label, input, textarea, select, button {
+    color: #ffffff !important;
+  }
+  
+  /* Navigation links */
+  nav a, nav button {
+    color: #ffffff !important;
+  }
+  
+  nav a:hover, nav button:hover {
+    color: #fbbf24 !important;
+  }
+  
+  /* Active navigation link */
+  nav a[aria-current="page"],
+  nav a.active {
+    color: #fbbf24 !important;
+    border-bottom: 2px solid #fbbf24 !important;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-yellow-400 hover:bg-yellow-500 text-black font-semibold py-3 px-6 rounded-lg transition-colors duration-200 shadow-lg hover:shadow-xl;
+  }
+  
+  .btn-secondary {
+    @apply bg-white hover:bg-gray-50 text-yellow-600 font-semibold py-3 px-6 rounded-lg border-2 border-yellow-400 transition-colors duration-200;
+  }
+  
+  .section-padding {
+    @apply pt-40 pb-20 px-4 sm:px-6 lg:px-8;
+  }
+  
+  .container-max {
+    @apply max-w-7xl mx-auto;
+  }
+}

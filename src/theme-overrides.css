@@ -1,0 +1,26 @@
+/* Dark grey surface overrides */
+@layer utilities {
+  .bg-white,
+  .bg-gray-50,
+  .bg-gray-100,
+  .bg-red-50,
+  .bg-blue-50,
+  .bg-purple-50,
+  .bg-orange-50 {
+    background-color: #1d1c26 !important;
+    border: 1px solid #2e2f38 !important;
+  }
+  .text-gray-900,
+  .text-gray-800,
+  .text-gray-700,
+  .text-gray-600,
+  .text-black,
+  .text-gray-900 {
+    color: #ffffff !important;
+  }
+
+  /* Headings will inherit the yellow color from index.css */
+  h2, h3, h4 {
+    color: inherit !important;
+  }
+}
