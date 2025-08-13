@@ -4,18 +4,33 @@ import upcomingEventsData from '../data/upcomingEvents.json'
 import pastEventsData from '../data/pastEvents.json'
 import { useNavigate } from 'react-router-dom'
 
-// Placeholder images for different event types
-// Import local event images
-import event1 from '../../assests/events images/RECycle/IMG_9851.JPG';
-import event2 from '../../assests/events images/RECycle/IMG_9857.JPG';
-
-// Fallback to using the same images for all event types since we have limited images
+// Direct image URLs for different event types
 const eventTypeImages = {
-  marathon: [event1, event2, event1],
-  workshop: [event2, event1, event2],
-  championship: [event1, event2, event1],
-  'night run': [event2, event1, event2],
-  default: [event1, event2, event1]
+  marathon: [
+    'https://images.unsplash.com/photo-1552674605-db6ffd4facb5?w=800&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1543351611-58f69d7c1781?w=800&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=800&auto=format&fit=crop'
+  ],
+  workshop: [
+    'https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=800&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&auto=format&fit=crop'
+  ],
+  championship: [
+    'https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=800&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1517649763962-0c2a4163f9b9?w=800&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1517649763962-0c2a4163f9b9?w=800&auto=format&fit=crop'
+  ],
+  'night run': [
+    'https://images.unsplash.com/photo-1517649763962-0c2a4163f9b9?w=800&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1517649763962-0c2a4163f9b9?w=800&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1517649763962-0c2a4163f9b9?w=800&auto=format&fit=crop'
+  ],
+  default: [
+    'https://images.unsplash.com/photo-1518611012118-696072aa579a?w=800&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1517649763962-0c2a4163f9b9?w=800&auto=format&fit=crop'
+  ]
 };
 
 // Component for the image carousel

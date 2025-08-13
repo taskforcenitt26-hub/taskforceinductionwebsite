@@ -2,9 +2,33 @@ import React from 'react'
 import heroBg from '../../assests/Websiteopenbg.png';
 import { useParams } from 'react-router-dom'
 import eventsData from '../data/pastEvents.json'
-import eventImages from '../data/eventImages.json';
 import { Carousel } from 'react-responsive-carousel'
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
+
+// Import local event images
+import recycle1 from '../../assests/events images/RECycle/IMG_9851.JPG';
+import recycle2 from '../../assests/events images/RECycle/IMG_9857.JPG';
+import passport1 from '../../assests/events images/Passport Mela/passport mela 1.jpg';
+import passport2 from '../../assests/events images/Passport Mela/passport mela 2.jpg';
+import townhall1 from '../../assests/events images/Townhall/2_20250110_112004_0001.png';
+import townhall2 from '../../assests/events images/Townhall/3_20250110_112005_0002.png';
+import townhall3 from '../../assests/events images/Townhall/GOLDEN HOUR_20250117_214858_0000.png';
+import aadhar1 from '../../assests/events images/Aadhar and Pan Card Mela/AADHAR UPDAION MELA_20250108_223004_0000.png';
+import aadhar2 from '../../assests/events images/Aadhar and Pan Card Mela/AADHAR UPDAION MELA_20250108_223004_0001.png';
+import aadhar3 from '../../assests/events images/Aadhar and Pan Card Mela/AADHAR UPDAION MELA_20250108_223004_0002.png';
+
+// Map event IDs to their corresponding local images
+const eventImageUrls = {
+  "1": [recycle1, recycle2],
+  "2": [passport1, passport2],
+  "3": [townhall1, townhall2, townhall3],
+  "4": [aadhar1, aadhar2, aadhar3],
+  "5": [
+    'https://via.placeholder.com/600x400?text=Soapbox+Event+1',
+    'https://via.placeholder.com/600x400?text=Soapbox+Event+2',
+    'https://via.placeholder.com/600x400?text=Soapbox+Event+3'
+  ]
+}
 
 const EventDetail = () => {
   const { id } = useParams()
@@ -12,20 +36,12 @@ const EventDetail = () => {
 
   if (!event) return <div className="p-8 text-center">Event not found</div>
 
-  // placeholder images; ideally event.images array exists
-  let images = event.images;
-  if (!images) {
-    const mapped = eventImages[event.id];
-    if (mapped && mapped.length) {
-      images = mapped.map((p)=> new URL(p, import.meta.url).href);
-    } else {
-      images = [
-        'https://via.placeholder.com/600x400?text=Event+Photo+1',
-        'https://via.placeholder.com/600x400?text=Event+Photo+2',
-        'https://via.placeholder.com/600x400?text=Event+Photo+3',
-      ];
-    }
-  }
+  // Use direct image URLs from eventImageUrls
+  let images = event.images || eventImageUrls[event.id] || [
+    'https://via.placeholder.com/600x400?text=Event+Photo+1',
+    'https://via.placeholder.com/600x400?text=Event+Photo+2',
+    'https://via.placeholder.com/600x400?text=Event+Photo+3',
+  ];
 
   return (
     <div className="w-full">
