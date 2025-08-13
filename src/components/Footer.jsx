@@ -52,7 +52,7 @@ const Footer = () => {
               <li><Link to="/" className="text-gray-400 hover:text-yellow-400 transition-colors">Home</Link></li>
               <li><Link to="/about" className="text-gray-400 hover:text-yellow-400 transition-colors">About Us</Link></li>
               <li><Link to="/members" className="text-gray-400 hover:text-yellow-400 transition-colors">Members</Link></li>
-              <li><Link to="/events" className="text-gray-400 hover:text-yellow-400 transition-colors">Events</Link></li>
+              <li><Link to="/induction" className="text-gray-400 hover:text-yellow-400 transition-colors">Induction</Link></li>
             </ul>
           </div>
 
@@ -63,6 +63,14 @@ const Footer = () => {
               <li>NIT Trichy Campus</li>
               <li>Tiruchirappalli, Tamil Nadu</li>
               <li>India - 620015</li>
+              <li className="pt-2">
+                <Link to="/contact" className="text-yellow-400 hover:text-yellow-300 transition-colors flex items-center">
+                  <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                  </svg>
+                  Contact Us
+                </Link>
+              </li>
             </ul>
           </div>
         </div>

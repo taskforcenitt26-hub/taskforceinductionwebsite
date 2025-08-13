@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom';
 import heroBg from '../../assests/Websiteopen.png';
 import upcomingEventsData from '../data/upcomingEvents.json'
+import './Home.css';
 
 const Home = () => {
   const [upcomingEvents, setUpcomingEvents] = useState([])
@@ -100,7 +101,7 @@ const Home = () => {
       <section id="upcoming-events" className="bg-gray-100">
         <div className="container-max section-padding">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="upcoming-events-heading">
               Upcoming Events
             </h2>
           </div>
@@ -113,7 +114,7 @@ const Home = () => {
                 <div className="text-yellow-600 font-semibold mb-2">
                   {upcomingEvents[currentUpdateIndex].date}
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                <h3 className="event-title text-xl font-semibold mb-3">
                   {upcomingEvents[currentUpdateIndex].title}
                 </h3>
                 <p className="text-gray-600 mb-4">
@@ -162,7 +163,7 @@ const Home = () => {
             {upcomingEvents.map((event) => (
               <div key={event.id} className="bg-gray-50 p-6 rounded-lg hover:shadow-md transition-shadow duration-200">
                 <div className="text-yellow-600 font-semibold mb-2">{event.date}</div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                <h3 className="event-title text-xl font-semibold mb-3">
                   {event.title}
                 </h3>
                 <p className="text-gray-600 mb-4">

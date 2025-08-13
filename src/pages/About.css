@@ -1,0 +1,40 @@
+/* Custom styles for About component */
+.about-heading {
+  color: #f59e0b !important; /* Same vibrant yellow as other pages */
+}
+
+/* Specific heading styles */
+h1.about-heading {
+  font-size: 2.25rem; /* 3xl */
+  line-height: 2.5rem; /* 3xl */
+  font-weight: 700; /* bold */
+  margin-bottom: 1rem; /* mb-4 */
+  text-align: center;
+}
+
+h2.about-heading {
+  font-size: 1.5rem; /* 2xl */
+  line-height: 2rem; /* 2xl */
+  font-weight: 700; /* bold */
+  margin-bottom: 0.75rem; /* mb-3 */
+}
+
+h3.about-heading {
+  font-size: 1.25rem; /* xl */
+  line-height: 1.75rem; /* xl */
+  font-weight: 600; /* semibold */
+  margin-bottom: 0.5rem; /* mb-2 */
+}
+
+/* For medium screens and up */
+@media (min-width: 768px) {
+  h1.about-heading {
+    font-size: 3rem; /* 4xl */
+    line-height: 3.5rem; /* 4xl */
+  }
+  
+  h2.about-heading {
+    font-size: 1.875rem; /* 3xl */
+    line-height: 2.25rem; /* 3xl */
+  }
+}

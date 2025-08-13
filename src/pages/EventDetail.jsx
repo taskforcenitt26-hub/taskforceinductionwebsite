@@ -16,6 +16,8 @@ import townhall3 from '../../assests/events images/Townhall/GOLDEN HOUR_20250117
 import aadhar1 from '../../assests/events images/Aadhar and Pan Card Mela/AADHAR UPDAION MELA_20250108_223004_0000.png';
 import aadhar2 from '../../assests/events images/Aadhar and Pan Card Mela/AADHAR UPDAION MELA_20250108_223004_0001.png';
 import aadhar3 from '../../assests/events images/Aadhar and Pan Card Mela/AADHAR UPDAION MELA_20250108_223004_0002.png';
+import soapbox1 from '../../assests/events images/Soapbox/soap box 1.jpg';
+import soapbox2 from '../../assests/events images/Soapbox/soap box 2.jpg';
 
 // Map event IDs to their corresponding local images
 const eventImageUrls = {
@@ -23,11 +25,7 @@ const eventImageUrls = {
   "2": [passport1, passport2],
   "3": [townhall1, townhall2, townhall3],
   "4": [aadhar1, aadhar2, aadhar3],
-  "5": [
-    'https://via.placeholder.com/600x400?text=Soapbox+Event+1',
-    'https://via.placeholder.com/600x400?text=Soapbox+Event+2',
-    'https://via.placeholder.com/600x400?text=Soapbox+Event+3'
-  ]
+  "5": [soapbox1, soapbox2]
 }
 
 const EventDetail = () => {

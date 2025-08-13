@@ -1,0 +1,22 @@
+/* Custom styles for Home component */
+.upcoming-events-heading {
+  color: #f59e0b !important; /* Vibrant yellow */
+  font-size: 1.875rem; /* 3xl */
+  line-height: 2.25rem; /* 3xl */
+  font-weight: 700; /* bold */
+  margin-bottom: 1rem; /* mb-4 */
+  text-align: center;
+}
+
+/* Event title styles */
+.event-title {
+  color: #f59e0b !important; /* Same vibrant yellow */
+}
+
+/* For medium screens and up */
+@media (min-width: 768px) {
+  .upcoming-events-heading {
+    font-size: 2.25rem; /* 4xl */
+    line-height: 2.5rem; /* 4xl */
+  }
+}

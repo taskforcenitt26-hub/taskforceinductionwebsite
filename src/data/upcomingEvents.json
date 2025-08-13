@@ -2,25 +2,25 @@
   {
     "id": 1,
     "title": "Townhall",
-    "date": "13, 14, 15 Aug 2024",
-    "time": "10:00 AM - 4:00 PM",
+    "date": "13, 14, 15 Aug 2025",
+    "time": "14 Aug (5-9 PM) & 15 Aug (10 AM- 9 PM)",
     "location": "A11",
-    "description": "Townhall is NIT Trichy's annual open platform for transparent dialogue between students and campus clubs, organized by TaskForce, the institute's Social Initiatives Hub. The event features a live, unfiltered budget presentation where every club shares its plans, projects, and expenditures, giving students a clear view of how their semester contributions are utilized."
+    "description": "TaskForce, the institute's Social Initiatives Hub, organizes NIT Trichy's annual Townhall, an open forum for candid discussions between students and campus organizations.  Students gain a clear picture of how their semester donations are used during the event's live, unfiltered budget presentation, where each club reveals its plans, projects, and expenses."
   },
   {
     "id": 2,
     "title": "Pre-Induction",
-    "date": "20, 21, 22 Aug 2024",
+    "date": "20, 21, 22 Aug 2025",
     "time": "9:00 AM - 6:00 PM",
     "location": "Third-I",
-    "description": "Before the official induction process for Deputy Managers begins, TaskForce conducts the Pre-Induction Task. In this initiative, our second-year members actively assist first-year students joining NIT Trichy by guiding them through the hostel allotment process and helping them settle in smoothly. This hands-on experience not only supports newcomers but also fosters leadership and responsibility among our members."
+    "description": "TaskForce administers the Pre-Induction Task prior to the start of the official induction procedure for Deputy Managers.  Through this program, our second-year members actively support new NIT Trichy students by assisting them with the hostel assignment process and facilitating a smooth transition.  In addition to helping newcomers, this practical experience develops our members' leadership and sense of accountability."
   },
   {
     "id": 3,
     "title": "RECycle",
-    "date": "20, 21, 22 Aug 2024",
+    "date": "20, 21, 22 Aug 2025",
     "time": "9:00 AM - 6:00 PM",
-    "location": "Shed adjacent LOGOS Seminar Hall",
-    "description": "From forgotten sheds to fresh rides — RECycle breathes new life into abandoned bicycles on campus. Each year, cycles left behind in hostel sheds by graduating students are collected by our team, refurbished in partnership with trusted vendors, and made safe and road-ready. These renewed cycles are then sold at affordable prices to incoming freshers during orientation, ensuring they have a reliable and eco-friendly way to get around campus from day one."
+    "location": "Shed Adjacent LOGOS Seminar Hall",
+    "description": "On campus, RECycle revitalizes abandoned bicycles, transforming them from neglected sheds to brand-new rides.  Every year, our staff picks up the bicycles that graduating students leave in the hostel sheds, refurbishes them in collaboration with reliable suppliers, and gets them safe and road-ready.  During orientation, these updated cycles are then offered to new students at reasonable costs, guaranteeing them a dependable and environmentally responsible means of transportation on campus right away."
   }
 ]

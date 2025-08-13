@@ -1,6 +1,7 @@
 import React from 'react';
 import heroBg from '../../assests/Websiteopenbg.png';
 import { FaBullseye, FaEye, FaUsers, FaLightbulb, FaHandsHelping } from 'react-icons/fa';
+import './About.css';
 
 const About = () => {
   return (
@@ -8,7 +9,7 @@ const About = () => {
       {/* Hero Section */}
       <section style={{backgroundImage:`url(${heroBg})`}} className="bg-cover bg-center text-white section-padding">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-3xl md:text-5xl font-bold mb-4">About TaskForce</h1>
+          <h1 className="about-heading">About TaskForce</h1>
           <p className="text-lg md:text-xl max-w-3xl mx-auto">
             Empowering students through leadership, service, and community engagement at NIT Trichy.
           </p>
@@ -20,7 +21,7 @@ const About = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-10">
-              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">Our Core Purpose</h2>
+              <h2 className="about-heading">Our Core Purpose</h2>
               <div className="w-16 h-1 bg-yellow-500 mx-auto mb-4"></div>
               <p className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto">
                 Driving positive change and fostering leadership at NIT Trichy through innovative solutions and community engagement.
@@ -32,7 +33,7 @@ const About = () => {
                 <div className="text-yellow-500 text-3xl mb-4">
                   <FaBullseye className="inline-block" />
                 </div>
-                <h2 className="text-xl font-bold text-gray-900 mb-3">Our Mission</h2>
+                <h2 className="about-heading">Our Mission</h2>
                 <div className="space-y-3">
                   <p className="text-gray-700 text-sm leading-relaxed">
                     To enhance student life at NIT Tiruchirappalli by providing accessible, affordable, and impactful solutions to everyday challenges, while offering opportunities for students to engage in meaningful administrative and community-focused initiatives.
@@ -47,7 +48,7 @@ const About = () => {
                 <div className="text-yellow-500 text-3xl mb-4">
                   <FaEye className="inline-block" />
                 </div>
-                <h2 className="text-xl font-bold text-gray-900 mb-3">Our Vision</h2>
+                <h2 className="about-heading">Our Vision</h2>
                 <div className="space-y-3">
                   <p className="text-gray-700 text-sm leading-relaxed">
                     To be a dynamic and student-driven hub that fosters leadership, administrative skills, and social responsibility, inspiring future leaders who can initiate and sustain positive change.
@@ -66,7 +67,7 @@ const About = () => {
       <section className="py-10 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-8">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">Our Core Values</h2>
+            <h2 className="about-heading">Our Core Values</h2>
             <div className="w-16 h-1 bg-yellow-500 mx-auto mb-4"></div>
             <p className="text-base text-gray-600 max-w-3xl mx-auto">
               These principles guide everything we do at TaskForce and shape our community.
@@ -110,7 +111,7 @@ const About = () => {
                 <div className="text-yellow-500 mb-3">
                   {value.icon}
                 </div>
-                <h3 className="text-lg font-semibold mb-1.5 text-gray-900">{value.title}</h3>
+                <h3 className="about-heading">{value.title}</h3>
                 <p className="text-sm text-gray-600">{value.description}</p>
               </div>
             ))}
@@ -121,7 +122,7 @@ const About = () => {
       {/* Call to Action */}
       <section className="py-10 bg-white">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Join Our Community</h2>
+          <h2 className="about-heading">Join Our Community</h2>
           <p className="text-base text-gray-600 mb-6 max-w-2xl mx-auto">
             Be part of TaskForce and help us make a difference at NIT Trichy. Whether you want to lead, create, or contribute, there's a place for you here.
           </p>
