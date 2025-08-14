@@ -49,17 +49,17 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2">
-              <li><Link to="/" className="text-gray-400 hover:text-yellow-400 transition-colors">Home</Link></li>
-              <li><Link to="/about" className="text-gray-400 hover:text-yellow-400 transition-colors">About Us</Link></li>
-              <li><Link to="/members" className="text-gray-400 hover:text-yellow-400 transition-colors">Members</Link></li>
-              <li><Link to="/induction" className="text-gray-400 hover:text-yellow-400 transition-colors">Induction</Link></li>
+              <li><Link to="/" className="text-white hover:text-yellow-400 transition-colors">Home</Link></li>
+              <li><Link to="/about" className="text-white hover:text-yellow-400 transition-colors">About Us</Link></li>
+              <li><Link to="/members" className="text-white hover:text-yellow-400 transition-colors">Members</Link></li>
+              <li><Link to="/induction" className="text-white hover:text-yellow-400 transition-colors">Induction</Link></li>
             </ul>
           </div>
 
           {/* Contact Info */}
           <div>
-            <h4 className="text-lg font-semibold mb-4">Contact</h4>
-            <ul className="space-y-2 text-gray-400">
+            <h4 className="text-lg font-semibold mb-4 text-white">Contact</h4>
+            <ul className="space-y-2 text-white">
               <li>NIT Trichy Campus</li>
               <li>Tiruchirappalli, Tamil Nadu</li>
               <li>India - 620015</li>

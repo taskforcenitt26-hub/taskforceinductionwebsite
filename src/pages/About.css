@@ -31,6 +31,30 @@
   color: white !important;
 }
 
+/* Button styles with black text */
+.about-page .bg-yellow-500,
+.about-page .bg-yellow-600,
+.about-page .bg-white,
+.about-page .bg-gray-100 {
+  color: black !important;
+}
+
+/* Button hover states */
+.about-page .bg-yellow-500:hover,
+.about-page .bg-yellow-600:hover {
+  background-color: #d97706 !important; /* Darker yellow on hover */
+  color: black !important;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Secondary button hover */
+.about-page .bg-white:hover,
+.about-page .bg-gray-100:hover {
+  background-color: #e5e7eb !important; /* Light gray on hover */
+  color: black !important;
+}
+
 /* Specific heading styles */
 h1.about-heading {
   font-size: 2.25rem; /* 3xl */
@@ -65,4 +89,24 @@ h3.about-heading {
     font-size: 1.875rem; /* 3xl */
     line-height: 2.25rem; /* 3xl */
   }
+}
+
+/* Button specific styles */
+.about-page a[href*="induction"],
+.about-page a[href*="upcoming-events"] {
+  color: black !important;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Ensure button text is visible on hover */
+.about-page a[href*="induction"]:hover,
+.about-page a[href*="upcoming-events"]:hover {
+  color: black !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }

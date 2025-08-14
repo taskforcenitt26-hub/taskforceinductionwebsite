@@ -1,0 +1,75 @@
+/* Contact Page Specific Styles */
+
+/* Style for the send message button */
+button[type="submit"] {
+  color: black !important;
+  background-color: #f59e0b !important; /* Yellow color to match the theme */
+  border: none !important;
+  font-weight: 600 !important;
+  transition: all 0.3s ease !important;
+}
+
+/* Hover effect for the send message button */
+button[type="submit"]:hover {
+  background-color: #d97706 !important; /* Darker yellow on hover */
+  color: black !important;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Style for social media buttons */
+.bg-gradient-to-r a {
+  color: black !important;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+/* Style for social media icons */
+.bg-gradient-to-r svg {
+  color: black !important;
+}
+
+/* Style for social media text */
+.bg-gradient-to-r .font-bold,
+.bg-gradient-to-r .text-gray-800 {
+  color: black !important;
+}
+
+/* Hover effect for social media links */
+.bg-gradient-to-r:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Style for the contact form inputs */
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid #4b5563;
+  border-radius: 0.5rem;
+  background-color: #1f2937;
+  color: #f3f4f6;
+  transition: all 0.2s;
+}
+
+/* Focus state for form inputs */
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+  outline: none;
+  border-color: #f59e0b;
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.2);
+}
+
+/* Style for error messages */
+.error-message {
+  color: #ef4444;
+  font-size: 0.875rem;
+  margin-top: -0.5rem;
+  margin-bottom: 0.5rem;
+}

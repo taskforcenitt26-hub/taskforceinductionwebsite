@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import heroBg from '../../assests/Websiteopenbg.png';
 import { supabase } from '../utils/supabaseClient'
+import './Contact.css'
 
 const Contact = () => {
   const [formData, setFormData] = useState({
