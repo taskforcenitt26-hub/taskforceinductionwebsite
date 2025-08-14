@@ -13,7 +13,6 @@ import AaqhilAhmed from "../../assests/managers/Aaqhil Ahmed.jpeg";
 import ChinmaiBathula from "../../assests/managers/Chinmai Bathula.jpg";
 import GauthamS from "../../assests/managers/Gauthum S.jpg";
 import HarinathSS from "../../assests/managers/Harinath SS.webp";
-import KinethaSampath from "../../assests/managers/Kinetha Sampath.jpeg";
 import ParshanaBaskaran from "../../assests/managers/Parshana Baskaran.jpg";
 import Priyadharshini from "../../assests/managers/Priyadharshini.jpg";
 import RoshanBhaskar from "../../assests/managers/Roshan Bhaskar.jpg";
@@ -35,7 +34,6 @@ const photoMap = {
   'Priyadharshini M': Priyadharshini,
   'M. Roshan Bhaskar': RoshanBhaskar,
   'S. Swathilakshmi': Swathilakshmi,
-  'Kinetha S': KinethaSampath,
   'Gautham Natarajan S': GauthamS,
   'Sivasubramanian P': SivasubramanianP,
   'Anaswara S Kumar': Anaswara,
