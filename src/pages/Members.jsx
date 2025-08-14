@@ -3,6 +3,7 @@ import membersData from '../data/members.json';
 import coreMembersData from '../data/coremember.json';
 import heroBg from '../../assests/Websiteopenbg.png';
 import DrSreejithMohan from "../../assests/faculty advisor/sreejith mohan.jpeg";
+import NITTLogo from "../../assests/NITT_logo.png";
 // Core & Manager photos
 import ajayj from "../../assests/core member/Ajay J.jpg";
 import thilaks from "../../assests/core member/Thilak S.jpg";
@@ -75,7 +76,7 @@ const renderMemberCard = (member) => {
               className="block w-6 h-6"
             >
               <img 
-                src="../../assests/NITT_logo.png" 
+                src={NITTLogo} 
                 alt="NITT Logo"
                 className="w-full h-full object-contain"
               />
