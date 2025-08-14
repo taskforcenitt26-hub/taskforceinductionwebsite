@@ -1,6 +1,19 @@
 /* Custom styles for Home component */
-.upcoming-events-heading {
+/* Reset all text in upcoming events to white first */
+#upcoming-events {
+  color: white !important;
+}
+
+/* Only target specific heading elements for yellow color */
+#upcoming-events h2,
+#upcoming-events h3,
+#upcoming-events .upcoming-events-heading,
+#upcoming-events .event-title {
   color: #f59e0b !important; /* Vibrant yellow */
+}
+
+/* Specific styles for main heading */
+#upcoming-events h2.upcoming-events-heading {
   font-size: 1.875rem; /* 3xl */
   line-height: 2.25rem; /* 3xl */
   font-weight: 700; /* bold */
@@ -8,29 +21,27 @@
   text-align: center;
 }
 
-/* Event title styles */
-.event-title {
-  color: #1f2937 !important; /* Dark gray for better contrast */
-}
-
-/* Update text colors for better visibility */
-.bg-gray-50,
-.bg-gray-100 {
-  color: #1f2937 !important; /* Dark gray text on light backgrounds */
-}
-
-/* Ensure text in event cards is visible */
-.bg-gray-50 p,
-.bg-gray-100 p,
-.bg-gray-50 .text-gray-600,
-.bg-gray-100 .text-gray-600 {
-  color: #1f2937 !important;
+/* Specific styles for event titles */
+#upcoming-events h3.event-title {
+  font-size: 1.25rem; /* xl */
+  line-height: 1.75rem; /* xl */
+  font-weight: 600; /* semibold */
+  margin-bottom: 0.75rem; /* mb-3 */
+  color: #f59e0b;
 }
 
 /* For medium screens and up */
 @media (min-width: 768px) {
-  .upcoming-events-heading {
-    font-size: 2.25rem; /* 4xl */
-    line-height: 2.5rem; /* 4xl */
+  #upcoming-events h2.upcoming-events-heading,
+  #upcoming-events h2.text-3xl {
+    font-size: 2.25rem !important; /* 4xl */
+    line-height: 2.5rem !important; /* 4xl */
+  }
+  
+  #upcoming-events h3,
+  #upcoming-events .event-title,
+  #upcoming-events .text-xl {
+    font-size: 1.5rem !important; /* 2xl */
+    line-height: 2rem !important; /* 2xl */
   }
 }

@@ -130,7 +130,7 @@ const Contact = () => {
       </section>
 
       {/* Contact Form & Social Media */}
-      <section className="bg-gray-900 py-12">
+      <section className="bg-gray-900 py-12 contact-form-container">
         <div className="container-max px-4 sm:px-6 lg:px-8 py-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Form */}
@@ -151,13 +151,13 @@ const Contact = () => {
                         value={formData.name}
                         onChange={handleChange}
                         required
-                        className={`w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-400 focus:border-transparent text-gray-900 bg-white ${
+                        className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-yellow-400 focus:border-transparent ${
                           errors.name ? 'border-red-500' : ''
                         }`}
                         placeholder="Your full name"
                       />
                       {errors.name && (
-                        <p className="mt-1 text-sm text-red-400">{errors.name}</p>
+                        <p className="mt-1 text-sm error-message">{errors.name}</p>
                       )}
                     </div>
                     
@@ -172,13 +172,13 @@ const Contact = () => {
                         value={formData.email}
                         onChange={handleChange}
                         required
-                        className={`w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-400 focus:border-transparent text-gray-900 bg-white ${
+                        className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-yellow-400 focus:border-transparent ${
                           errors.email ? 'border-red-500' : ''
                         }`}
                         placeholder="your.email@example.com"
                       />
                       {errors.email && (
-                        <p className="mt-1 text-sm text-red-400">{errors.email}</p>
+                        <p className="mt-1 text-sm error-message">{errors.email}</p>
                       )}
                     </div>
                     
@@ -193,13 +193,13 @@ const Contact = () => {
                         onChange={handleChange}
                         required
                         rows={4}
-                        className={`w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-400 focus:border-transparent text-gray-900 bg-white ${
+                        className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-yellow-400 focus:border-transparent ${
                           errors.message ? 'border-red-500' : ''
                         }`}
                         placeholder="Tell us what's on your mind..."
                       />
                       {errors.message && (
-                        <p className="mt-1 text-sm text-red-400">{errors.message}</p>
+                        <p className="mt-1 text-sm error-message">{errors.message}</p>
                       )}
                     </div>
                     

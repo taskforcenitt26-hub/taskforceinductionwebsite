@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import heroBg from '../../assests/Websiteopenbg.png';
 import { supabase } from '../utils/supabaseClient'
+import '../styles/form-styles.css'
 
 const Induction = () => {
   const [submitStatus, setSubmitStatus] = useState(null) // null | 'success' | 'error'
@@ -42,12 +43,68 @@ const Induction = () => {
     })
   }
 
+  const [formErrors, setFormErrors] = useState({})
+
+  const validateForm = () => {
+    const errors = {}
+    let hasErrors = false
+    
+    // Check required fields
+    if (!formData.name.trim()) {
+      errors.name = 'Name is required'
+      hasErrors = true
+    }
+    if (!formData.phone.trim()) {
+      errors.phone = 'Phone number is required'
+      hasErrors = true
+    }
+    if (!formData.rollNo.trim()) {
+      errors.rollNo = 'Roll number is required'
+      hasErrors = true
+    }
+    if (!formData.department) {
+      errors.department = 'Department is required'
+      hasErrors = true
+    }
+    if (!formData.studentLifeEasier.trim()) {
+      errors.studentLifeEasier = 'This field is required'
+      hasErrors = true
+    }
+    if (!formData.leadershipExperience.trim()) {
+      errors.leadershipExperience = 'This field is required'
+      hasErrors = true
+    }
+    if (!formData.eventSuggestion.trim()) {
+      errors.eventSuggestion = 'This field is required'
+      hasErrors = true
+    }
+    if (!formData.taskforceMeaning.trim()) {
+      errors.taskforceMeaning = 'This field is required'
+      hasErrors = true
+    }
+    
+    // Validate preferences
+    if (formData.preferences.length !== 3) {
+      errors.preferences = 'Please select exactly 3 preferences'
+      hasErrors = true
+    }
+    
+    setFormErrors(errors)
+    return !hasErrors
+  }
+
   const handleSubmit = async (e) => {
     e.preventDefault()
     
-    // Validate preferences
-    if (formData.preferences.length === 0) {
+    // Clear previous errors
+    setFormErrors({})
+    
+    // Validate form
+    const isValid = validateForm()
+    if (!isValid) {
       setSubmitStatus('error')
+      // Force a re-render to show errors
+      setFormData({...formData})
       return
     }
     
@@ -164,9 +221,10 @@ const Induction = () => {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-400 focus:border-transparent text-gray-900 bg-white"
+                      className={`w-full px-4 py-3 border ${formErrors.name ? 'input-error' : 'border-gray-300'} rounded-lg focus:ring-2 focus:ring-yellow-400 focus:border-transparent text-gray-900 bg-white`}
                       placeholder="Enter your full name"
                     />
+                    {formErrors.name && <p className="form-error">{formErrors.name}</p>}
                   </div>
                   
                   <div>
@@ -180,9 +238,10 @@ const Induction = () => {
                       value={formData.phone}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-400 focus:border-transparent text-gray-900 bg-white"
+                      className={`w-full px-4 py-3 border ${formErrors.phone ? 'input-error' : 'border-gray-300'} rounded-lg focus:ring-2 focus:ring-yellow-400 focus:border-transparent text-gray-900 bg-white`}
                       placeholder="+91 xxxxx xxxxx"
                     />
+                    {formErrors.phone && <p className="form-error">{formErrors.phone}</p>}
                   </div>
                 </div>
                 
@@ -198,9 +257,10 @@ const Induction = () => {
                       value={formData.rollNo}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-400 focus:border-transparent text-gray-900 bg-white"
+                      className={`w-full px-4 py-3 border ${formErrors.rollNo ? 'input-error' : 'border-gray-300'} rounded-lg focus:ring-2 focus:ring-yellow-400 focus:border-transparent text-gray-900 bg-white`}
                       placeholder="Your roll number"
                     />
+                    {formErrors.rollNo && <p className="form-error">{formErrors.rollNo}</p>}
                   </div>
                   
                   <div>
@@ -213,9 +273,10 @@ const Induction = () => {
                       value={formData.department}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-400 focus:border-transparent text-gray-900 bg-white"
+                      className={`w-full px-4 py-3 border ${formErrors.department ? 'input-error' : 'border-gray-300'} rounded-lg focus:ring-2 focus:ring-yellow-400 focus:border-transparent text-gray-900 bg-white`}
                     >
                       <option value="">Select your department</option>
+                      {formErrors.department && <p className="form-error">{formErrors.department}</p>}
                       {departments.map((dept, index) => (
                         <option key={index} value={dept}>{dept}</option>
                       ))}
@@ -233,13 +294,16 @@ const Induction = () => {
                     Select Your Top 3 Preferences *
                   </label>
                   <p className="text-sm text-gray-600 mb-4">
-                    Click on the teams to select your preferences in order. You can select up to 3 teams.
+                    Click on the teams to select exactly 3 preferences in order of priority.
                   </p>
+                  {formErrors.preferences && (
+                    <p className="preference-error">{formErrors.preferences}</p>
+                  )}
                   
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-4">
                     {subteams.map((team, index) => {
-                      const isSelected = formData.preferences.includes(team)
-                      const preferenceNumber = formData.preferences.indexOf(team) + 1
+                      const isSelected = formData.preferences.includes(team);
+                      const preferenceNumber = formData.preferences.indexOf(team) + 1;
                       
                       return (
                         <button
@@ -268,7 +332,7 @@ const Induction = () => {
                 </div>
                 
                 {submitStatus === 'error' && formData.preferences.length === 0 && (
-                  <p className="mt-2 text-sm text-red-600">Please select at least one team preference</p>
+                  <p className="preference-error">Please select at least one team preference</p>
                 )}
               </div>
 
@@ -287,10 +351,10 @@ const Induction = () => {
                       name="studentLifeEasier"
                       value={formData.studentLifeEasier}
                       onChange={handleChange}
-                      required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-400 focus:border-transparent text-gray-900 bg-white"
+                      className={`w-full px-4 py-3 border ${formErrors.studentLifeEasier ? 'input-error' : 'border-gray-300'} rounded-lg focus:ring-2 focus:ring-yellow-400 focus:border-transparent text-gray-900 bg-white`}
                       placeholder="Your answer in one line..."
                     />
+                    {formErrors.studentLifeEasier && <p className="form-error">{formErrors.studentLifeEasier}</p>}
                   </div>
                   
                   <div>
@@ -302,11 +366,11 @@ const Induction = () => {
                       name="leadershipExperience"
                       value={formData.leadershipExperience}
                       onChange={handleChange}
-                      required
                       rows={5}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-400 focus:border-transparent text-gray-900 bg-white"
+                      className={`w-full px-4 py-3 border ${formErrors.leadershipExperience ? 'input-error' : 'border-gray-300'} rounded-lg focus:ring-2 focus:ring-yellow-400 focus:border-transparent text-gray-900 bg-white`}
                       placeholder="Describe your leadership experience and approach..."
                     />
+                    {formErrors.leadershipExperience && <p className="form-error">{formErrors.leadershipExperience}</p>}
                   </div>
                   
                   <div>
@@ -318,11 +382,11 @@ const Induction = () => {
                       name="eventSuggestion"
                       value={formData.eventSuggestion}
                       onChange={handleChange}
-                      required
                       rows={4}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-400 focus:border-transparent text-gray-900 bg-white"
+                      className={`w-full px-4 py-3 border ${formErrors.eventSuggestion ? 'input-error' : 'border-gray-300'} rounded-lg focus:ring-2 focus:ring-yellow-400 focus:border-transparent text-gray-900 bg-white`}
                       placeholder="Describe your event idea and why it would be valuable..."
                     />
+                    {formErrors.eventSuggestion && <p className="form-error">{formErrors.eventSuggestion}</p>}
                   </div>
                   
                   <div>
@@ -334,11 +398,11 @@ const Induction = () => {
                       name="taskforceMeaning"
                       value={formData.taskforceMeaning}
                       onChange={handleChange}
-                      required
                       rows={5}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-400 focus:border-transparent text-gray-900 bg-white"
+                      className={`w-full px-4 py-3 border ${formErrors.taskforceMeaning ? 'input-error' : 'border-gray-300'} rounded-lg focus:ring-2 focus:ring-yellow-400 focus:border-transparent text-gray-900 bg-white`}
                       placeholder="Share your thoughts about TaskForce and its role in the college..."
                     />
+                    {formErrors.taskforceMeaning && <p className="form-error">{formErrors.taskforceMeaning}</p>}
                   </div>
                 </div>
               </div>
@@ -348,7 +412,7 @@ const Induction = () => {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className={`btn-primary px-12 py-4 text-lg ${isSubmitting ? 'opacity-50 cursor-not-allowed' : ''}`}
+                  className={`btn-primary px-12 py-4 text-lg ${isSubmitting ? 'opacity-50 cursor-not-allowed' : ''} ${Object.keys(formErrors).length > 0 ? 'bg-yellow-300 hover:bg-yellow-400' : ''}`}
                 >
                   {isSubmitting ? 'Submitting...' : 'Submit Application'}
                 </button>
@@ -373,15 +437,15 @@ const Induction = () => {
               
               {submitStatus === 'error' && (
                 <div className="mt-6 p-6 bg-white border-l-4 border-red-500 rounded-lg shadow-lg">
-                  <div className="flex items-center">
+                  <div className="flex items-center submission-error">
                     <div className="flex-shrink-0">
                       <svg className="w-8 h-8 text-red-500" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
                       </svg>
                     </div>
                     <div className="ml-4">
-                      <h3 className="text-lg font-semibold text-gray-900">Submission Failed</h3>
-                      <p className="text-gray-700 mt-1">{formData.preferences.length === 0 ? 'Please select at least one team preference before submitting.' : 'Something went wrong. Please try again later.'}</p>
+                      <h3 className="text-lg font-semibold">Submission Failed</h3>
+                      <p className="mt-1">{formData.preferences.length === 0 ? 'Please select at least one team preference before submitting.' : 'Make sure all the fields are filled.'}</p>
                     </div>
                   </div>
                 </div>

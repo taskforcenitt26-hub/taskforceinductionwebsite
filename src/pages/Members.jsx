@@ -58,13 +58,13 @@ const renderMemberCard = (member) => {
     {imgSrc ? (
       <img src={imgSrc} alt={member.name} className="w-full h-64 object-cover object-top mb-3 rounded" />
     ) : (
-      <div className="w-full h-48 flex items-center justify-center bg-gray-200 mb-3 rounded text-gray-500">
+      <div className="w-full h-48 flex items-center justify-center bg-gray-200 mb-3 rounded text-white">
         No Image
       </div>
     )}
-    <h3 className="font-semibold text-lg text-gray-900">{member.name}</h3>
+    <h3 className="font-semibold text-lg text-white">{member.name}</h3>
     {member.position && <p className="text-sm text-yellow-600">{member.position}</p>}
-          <p className="text-sm text-gray-600">{member.year || member.department || ''}</p>
+          <p className="text-sm text-white">{member.year || member.department || ''}</p>
       {member.linkedIn && (
         <div className="flex justify-center mt-2">
           <a href={member.linkedIn} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800">

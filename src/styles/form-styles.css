@@ -1,0 +1,32 @@
+/* Form error messages */
+.form-error {
+  color: #d97706 !important; /* Yellow-600 */
+  margin-top: 0.25rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+/* Form input error state */
+.input-error {
+  border-color: #d97706 !important; /* Yellow-600 */
+}
+
+/* Preference error message */
+.preference-error {
+  color: #d97706 !important; /* Yellow-600 */
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  display: block;
+}
+
+/* Submission error message */
+.submission-error {
+  color: white !important;
+}
+
+.submission-error h3,
+.submission-error p {
+  color: white !important;
+}

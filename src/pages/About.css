@@ -3,6 +3,34 @@
   color: #f59e0b !important; /* Same vibrant yellow as other pages */
 }
 
+/* Ensure all text is white in the About page */
+.about-page {
+  color: white !important;
+}
+
+/* Override any specific text colors */
+.about-page p,
+.about-page .text-gray-600,
+.about-page .text-gray-700,
+.about-page .text-gray-800,
+.about-page .text-gray-900 {
+  color: white !important;
+}
+
+/* Ensure text in white backgrounds is visible */
+.about-page .bg-white,
+.about-page .bg-gray-50,
+.about-page .bg-gray-100 {
+  color: white !important;
+}
+
+/* Ensure text in cards and sections is white */
+.about-page .bg-gray-50 p,
+.about-page .bg-gray-100 p,
+.about-page .bg-white p {
+  color: white !important;
+}
+
 /* Specific heading styles */
 h1.about-heading {
   font-size: 2.25rem; /* 3xl */

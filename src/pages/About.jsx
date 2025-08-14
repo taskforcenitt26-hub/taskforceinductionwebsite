@@ -5,7 +5,7 @@ import './About.css';
 
 const About = () => {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 about-page">
       {/* Hero Section */}
       <section style={{backgroundImage:`url(${heroBg})`}} className="bg-cover bg-center text-white section-padding">
         <div className="container mx-auto px-4 text-center">
