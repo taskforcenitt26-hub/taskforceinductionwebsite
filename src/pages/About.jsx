@@ -29,7 +29,7 @@ const About = () => {
             </div>
 
             <div className="grid md:grid-cols-2 gap-6 md:gap-8">
-              <div className="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200">
+              <div className="bg-gray-50 p-6 rounded-lg shadow-md">
                 <div className="text-yellow-500 text-3xl mb-4">
                   <FaBullseye className="inline-block" />
                 </div>
@@ -44,7 +44,7 @@ const About = () => {
                 </div>
               </div>
 
-              <div className="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200">
+              <div className="bg-gray-50 p-6 rounded-lg shadow-md">
                 <div className="text-yellow-500 text-3xl mb-4">
                   <FaEye className="inline-block" />
                 </div>
@@ -107,7 +107,7 @@ const About = () => {
                 icon: <FaHandsHelping className="w-6 h-6" />
               }
             ].map((value, index) => (
-              <div key={index} className="bg-white p-4 rounded-lg shadow-sm hover:shadow transition-shadow duration-200">
+              <div key={index} className="bg-white p-4 rounded-lg shadow-sm">
                 <div className="text-yellow-500 mb-3">
                   {value.icon}
                 </div>
@@ -129,13 +129,13 @@ const About = () => {
           <div className="flex flex-wrap justify-center gap-3">
             <a 
               href="/induction" 
-              className="bg-yellow-500 hover:bg-yellow-600 text-white font-semibold py-2 px-6 text-sm rounded-md transition-colors duration-200 shadow hover:shadow-md"
+              className="bg-yellow-500 text-white font-semibold py-2 px-6 text-sm rounded-md shadow"
             >
               Join TaskForce
             </a>
             <a 
               href="/#upcoming-events" 
-              className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-6 text-sm border border-gray-300 rounded-md shadow-sm hover:shadow transition-all duration-200"
+              className="upcoming-events-btn"
             >
               Upcoming Events
             </a>
