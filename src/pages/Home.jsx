@@ -62,7 +62,7 @@ const Home = () => {
       icon: '💼'
     },
     {
-      title: 'WeOps',
+      title: 'WebOps',
       description: 'Handles technical operations, event logistics, and infrastructure for all club activities.',
       icon: '⚙️'
     },
@@ -90,7 +90,7 @@ const Home = () => {
                 Learn More About Us
               </Link>
               <Link to="/induction" className="bg-gray-900 hover:bg-gray-800 text-white font-semibold py-2 sm:py-3 px-6 rounded-lg transition-colors duration-200 shadow-lg hover:shadow-xl w-11/12 sm:w-auto max-w-xs text-sm sm:text-base mx-auto">
-                Join the Hub
+                Join TaskForce
               </Link>
             </div>
           </div>

@@ -171,7 +171,7 @@ const Induction = () => {
   ]
   const subteams = [
     'Admin Relation & Treasury',
-    'WeOps',
+    'WebOps',
     'Publicity & Content',
     'Design & Media'
   ]
