@@ -161,6 +161,7 @@ const Induction = () => {
     'Civil Engineering',
     'Chemical Engineering',
     'Electronics & Communication',
+    'Instrumentation and Control Engineering',
     'Production Engineering',
     'Metallurgical Engineering',
     'Architecture',
