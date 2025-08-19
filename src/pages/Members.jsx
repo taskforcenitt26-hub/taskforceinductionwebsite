@@ -1,30 +1,35 @@
 import React, { useState } from 'react';
 import membersData from '../data/members.json';
 import coreMembersData from '../data/coremember.json';
+import exCoreMembersData from '../data/excore.json';
 import heroBg from '../../assests/Websiteopenbg.png';
-import DrSreejithMohan from "../../assests/faculty advisor/sreejith mohan.jpeg";
+import DrSreejithMohan from "../../assests/faculty advisor/sreejith mohan.webp";
 import NITTLogo from "../../assests/NITT_logo.png";
 // Core & Manager photos
-import ajayj from "../../assests/core member/Ajay J.jpg";
-import thilaks from "../../assests/core member/Thilak S.jpg";
-import steve from "../../assests/core member/Steve.jpg";
-import asritha from "../../assests/core member/Asritha Dakuri.jpg";
-import AaqhilAhmed from "../../assests/managers/Aaqhil Ahmed.jpeg";
-import ChinmaiBathula from "../../assests/managers/Chinmai Bathula.jpg";
-import GauthamS from "../../assests/managers/Gauthum S.jpg";
+import ajayj from "../../assests/core member/Ajay J.webp";
+import thilaks from "../../assests/core member/Thilak S.webp";
+import steve from "../../assests/core member/Steve.webp";
+import asritha from "../../assests/core member/Asritha Dakuri.webp";
+import AaqhilAhmed from "../../assests/managers/Aaqhil Ahmed.webp";
+import ChinmaiBathula from "../../assests/managers/Chinmai Bathula.webp";
+import GauthamS from "../../assests/managers/Gauthum S.webp";
 import HarinathSS from "../../assests/managers/Harinath SS.webp";
-import ParshanaBaskaran from "../../assests/managers/Parshana Baskaran.jpg";
-import Priyadharshini from "../../assests/managers/Priyadharshini.jpg";
-import RoshanBhaskar from "../../assests/managers/Roshan Bhaskar.jpg";
-import Swathilakshmi from "../../assests/managers/S.Swathilakshmi.jpg";
-import SivasubramanianP from "../../assests/managers/Siva Subramanian Prabaharan.jpg";
-import AindrilaAtoshiGopeArthi from "../../assests/managers/Aindrila Gope.jpg";
-import Anaswara from "../../assests/managers/Anaswara.jpg";
-import KrishanduttSathish from "../../assests/managers/Krishnadutt Sathish.jpg";
-import LankeshwarM from "../../assests/managers/Lankeshwar M.jpg";
-import ManishKumar from "../../assests/managers/Manish Kumar.jpg";
-import MohanaSomeshKumarP from "../../assests/managers/Mohana Somesh Kumar P.jpg";
-import rashmi from "../../assests/managers/Rashmi Kumari.jpg";
+import ParshanaBaskaran from "../../assests/managers/Parshana Baskaran.webp";
+import Priyadharshini from "../../assests/managers/Priyadharshini.webp";
+import RoshanBhaskar from "../../assests/managers/Roshan Bhaskar.webp";
+import Swathilakshmi from "../../assests/managers/S.Swathilakshmi.webp";
+import SivasubramanianP from "../../assests/managers/Siva Subramanian Prabaharan.webp";
+import AindrilaAtoshiGopeArthi from "../../assests/managers/Aindrila Gope.webp";
+import Anaswara from "../../assests/managers/Anaswara.webp";
+import KrishanduttSathish from "../../assests/managers/Krishnadutt Sathish.webp";
+import LankeshwarM from "../../assests/managers/Lankeshwar M.webp";
+import ManishKumar from "../../assests/managers/Manish Kumar.webp";
+import MohanaSomeshKumarP from "../../assests/managers/Mohana Somesh Kumar P.webp";
+import rashmi from "../../assests/managers/Rashmi Kumari.webp";
+import KarthikeyanN from "../../assests/excore member/Karthikeyan N.webp";
+import ShankariRR from "../../assests/excore member/Sankari Ravi.webp";
+import VSRathinavelMurugan from "../../assests/excore member/V S Rathinavel Murugan.webp";
+import VidyashreeHariniM from "../../assests/excore member/Vidyashree Harini M.webp";
 // Basic card rendering without heavy image logic to guarantee compile
 const photoMap = {
   'Aaqhil Ahmed': AaqhilAhmed,
@@ -47,7 +52,11 @@ const photoMap = {
   'Asritha Dakuri': asritha,
   'Mohana Somesh Kumar P': MohanaSomeshKumarP,
   'Dr. Sreejith Mohan': DrSreejithMohan,
-  'Rashmi':rashmi
+  'Rashmi':rashmi,
+  'Karthikeyan N': KarthikeyanN,
+  'Shankari R R': ShankariRR,
+  'V S Rathinavel Murugan': VSRathinavelMurugan,
+  'Vidyashree Harini M': VidyashreeHariniM
 };
 
 const renderMemberCard = (member) => {
@@ -55,7 +64,20 @@ const renderMemberCard = (member) => {
   return (
       <div key={member.name} className="bg-white rounded-lg shadow w-72 p-4 m-2 text-center">
     {imgSrc ? (
-      <img src={imgSrc} alt={member.name} className="w-full h-64 object-cover object-top mb-3 rounded" />
+      <img 
+        src={imgSrc} 
+        alt={member.name} 
+        className="w-full h-64 object-cover object-top mb-3 rounded" 
+        style={
+          member.name === 'Vidyashree Harini M'
+            ? { objectPosition: '50% 35%' }
+            : member.name === 'Parshana Baskaran'
+              ? { transform: 'rotate(90deg)' }
+              : member.name === 'Rashmi'
+                ? { transform: 'rotate(-90deg)' }
+                : undefined
+        }
+      />
     ) : (
       <div className="w-full h-48 flex items-center justify-center bg-gray-200 mb-3 rounded text-white">
         No Image
@@ -104,6 +126,7 @@ export default function MembersClean() {
   ];
 
   const coreTeam = Array.isArray(coreMembersData) ? coreMembersData : coreMembersData.members || [];
+  const exCoreTeam = Array.isArray(exCoreMembersData) ? exCoreMembersData : exCoreMembersData.members || [];
   const managers = Array.isArray(membersData) ? membersData : membersData.members || [];
 
   const [activeTab, setActiveTab] = useState('faculty');
@@ -114,6 +137,7 @@ export default function MembersClean() {
 
   const tabs = [
     { id: 'faculty', label: 'Faculty Advisors', count: facultyAdvisors.length },
+    { id: 'excore', label: 'Ex-core', count: Math.max(4, exCoreTeam.length) },
     { id: 'core', label: 'Core Team', count: coreTeam.length },
     { id: 'managers', label: 'Managers', count: managers.length },
   ];
@@ -159,6 +183,22 @@ export default function MembersClean() {
         {activeTab === 'core' && (
            <div className="flex flex-wrap justify-center">
              {coreTeam.map(renderMemberCard)}
+           </div>
+         )}
+ 
+        {activeTab === 'excore' && (
+           <div className="flex flex-wrap justify-center">
+             {(() => {
+               const placeholdersNeeded = Math.max(0, 4 - exCoreTeam.length);
+               const placeholders = Array.from({ length: placeholdersNeeded }, (_, i) => ({
+                 name: `Slot ${i + 1} (Coming soon)`,
+                 position: '',
+                 year: '',
+                 linkedIn: ''
+               }));
+               const displayList = [...exCoreTeam, ...placeholders].slice(0, 4);
+               return displayList.map(renderMemberCard);
+             })()}
            </div>
          )}
  

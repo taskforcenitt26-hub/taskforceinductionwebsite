@@ -5,6 +5,9 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   base: '/', // Set the base URL for the application
+  esbuild: {
+    drop: ['console', 'debugger']
+  },
   server: {
     port: 3000,
     open: true,
@@ -13,7 +16,7 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
-    sourcemap: true,
+    sourcemap: false,
     rollupOptions: {
       output: {
         manualChunks: {
