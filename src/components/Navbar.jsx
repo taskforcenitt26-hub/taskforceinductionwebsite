@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import Logo from '../../assests/LOGO.png'
+import Logo from '../../assests/LOGO.webp'
 import eventsData from '../data/pastEvents.json'
 
 const Navbar = () => {

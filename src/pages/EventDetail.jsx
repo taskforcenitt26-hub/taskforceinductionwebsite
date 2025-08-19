@@ -1,5 +1,5 @@
 import React from 'react'
-import heroBg from '../../assests/Websiteopenbg.png';
+import heroBg from '../../assests/Websiteopenbg.webp';
 import { useParams } from 'react-router-dom'
 import eventsData from '../data/pastEvents.json'
 import { Carousel } from 'react-responsive-carousel'

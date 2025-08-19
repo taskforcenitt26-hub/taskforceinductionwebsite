@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom';
-import heroBg from '../../assests/Websiteopen.png';
+import heroBg from '../../assests/Websiteopen.webp';
 import upcomingEventsData from '../data/upcomingEvents.json'
 import './Home.css';
 

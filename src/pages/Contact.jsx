@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import heroBg from '../../assests/Websiteopenbg.png';
+import heroBg from '../../assests/Websiteopenbg.webp';
 import { supabase } from '../utils/supabaseClient'
 import './Contact.css'
 

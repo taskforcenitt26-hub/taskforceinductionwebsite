@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import membersData from '../data/members.json';
 import coreMembersData from '../data/coremember.json';
 import exCoreMembersData from '../data/excore.json';
-import heroBg from '../../assests/Websiteopenbg.png';
+import heroBg from '../../assests/Websiteopenbg.webp';
 import DrSreejithMohan from "../../assests/faculty advisor/sreejith mohan.webp";
-import NITTLogo from "../../assests/NITT_logo.png";
+import NITTLogo from "../../assests/NITT_logo.webp";
 // Core & Manager photos
 import ajayj from "../../assests/core member/Ajay J.webp";
 import thilaks from "../../assests/core member/Thilak S.webp";

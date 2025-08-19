@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import Logo from '../../assests/LOGO.png'
+import Logo from '../../assests/LOGO.webp'
 
 const Footer = () => {
   return (

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react'
-import heroBg from '../../assests/Websiteopenbg.png';
+import heroBg from '../../assests/Websiteopenbg.webp';
 import upcomingEventsData from '../data/upcomingEvents.json'
 import pastEventsData from '../data/pastEvents.json'
 import { useNavigate } from 'react-router-dom'

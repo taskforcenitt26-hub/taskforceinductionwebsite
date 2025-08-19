@@ -1,5 +1,5 @@
 import React from 'react';
-import heroBg from '../../assests/Websiteopenbg.png';
+import heroBg from '../../assests/Websiteopenbg.webp';
 import { FaBullseye, FaEye, FaUsers, FaLightbulb, FaHandsHelping } from 'react-icons/fa';
 import './About.css';
 
